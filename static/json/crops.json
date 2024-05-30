@@ -1,0 +1,572 @@
+[
+    {
+        "name": "Blue Jazz",
+        "pierre_price": 30,
+        "joja_price": 37,
+        "growth_time": 7,
+        "sell_value": [
+            50,
+            62,
+            75,
+            100
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "Lucky Lunch"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/2/2f/Blue_Jazz.png"
+    },
+    {
+        "name": "Carrot",
+        "pierre_price": 0,
+        "joja_price": 0,
+        "growth_time": 3,
+        "sell_value": [
+            35,
+            43,
+            52,
+            70
+        ],
+        "energy": [
+            75,
+            105,
+            135,
+            195
+        ],
+        "health": [
+            33,
+            47,
+            60,
+            87
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/c/c3/Carrot.png"
+    },
+    {
+        "name": "Cauliflower",
+        "pierre_price": 80,
+        "joja_price": 100,
+        "growth_time": 12,
+        "sell_value": [
+            175,
+            218,
+            262,
+            350
+        ],
+        "energy": [
+            75,
+            105,
+            135,
+            195
+        ],
+        "health": [
+            33,
+            47,
+            60,
+            87
+        ],
+        "recipes": [
+            "Cheese Cauliflower"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/a/aa/Cauliflower.png"
+    },
+    {
+        "name": "Coffee Bean",
+        "pierre_price": 0,
+        "joja_price": 0,
+        "growth_time": 10,
+        "sell_value": [
+            15,
+            18,
+            22,
+            30
+        ],
+        "energy": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "health": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "recipes": [
+            "Coffee"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/3/33/Coffee_Bean.png"
+    },
+    {
+        "name": "Garlic",
+        "pierre_price": 40,
+        "joja_price": 0,
+        "growth_time": 4,
+        "sell_value": [
+            60,
+            75,
+            90,
+            120
+        ],
+        "energy": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "health": [
+            9,
+            12,
+            16,
+            23
+        ],
+        "recipes": [
+            "Escargot",
+            " Fiddlehead Risotto"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/c/cc/Garlic.png"
+    },
+    {
+        "name": "Green Bean",
+        "pierre_price": 60,
+        "joja_price": 75,
+        "growth_time": 10,
+        "sell_value": [
+            40,
+            50,
+            60,
+            80
+        ],
+        "energy": [
+            25,
+            35,
+            45,
+            65
+        ],
+        "health": [
+            11,
+            15,
+            20,
+            29
+        ],
+        "recipes": [
+            "Bean Hotpot"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/5/5c/Green_Bean.png"
+    },
+    {
+        "name": "Kale",
+        "pierre_price": 70,
+        "joja_price": 87,
+        "growth_time": 6,
+        "sell_value": [
+            110,
+            137,
+            165,
+            220
+        ],
+        "energy": [
+            50,
+            70,
+            90,
+            130
+        ],
+        "health": [
+            22,
+            31,
+            40,
+            58
+        ],
+        "recipes": [
+            "Salmon Dinner",
+            " Stir Fry"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/d1/Kale.png"
+    },
+    {
+        "name": "Parsnip",
+        "pierre_price": 20,
+        "joja_price": 25,
+        "growth_time": 4,
+        "sell_value": [
+            35,
+            43,
+            52,
+            70
+        ],
+        "energy": [
+            25,
+            35,
+            45,
+            65
+        ],
+        "health": [
+            11,
+            15,
+            20,
+            29
+        ],
+        "recipes": [
+            "Farmer's Lunch",
+            " Parsnip Soup"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/db/Parsnip.png"
+    },
+    {
+        "name": "Potato",
+        "pierre_price": 50,
+        "joja_price": 62,
+        "growth_time": 6,
+        "sell_value": [
+            80,
+            100,
+            120,
+            160
+        ],
+        "energy": [
+            25,
+            35,
+            45,
+            65
+        ],
+        "health": [
+            11,
+            15,
+            20,
+            29
+        ],
+        "recipes": [
+            "Hashbrowns"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/c/c2/Potato.png"
+    },
+    {
+        "name": "Rhubarb",
+        "pierre_price": 0,
+        "joja_price": 0,
+        "growth_time": 13,
+        "sell_value": [
+            220,
+            275,
+            330,
+            440
+        ],
+        "energy": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "health": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "recipes": [
+            "Rhubarb Pie"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/6/6e/Rhubarb.png"
+    },
+    {
+        "name": "Strawberry",
+        "pierre_price": 100,
+        "joja_price": 0,
+        "growth_time": 8,
+        "sell_value": [
+            120,
+            150,
+            180,
+            240
+        ],
+        "energy": [
+            50,
+            70,
+            90,
+            130
+        ],
+        "health": [
+            22,
+            31,
+            40,
+            58
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/6/6d/Strawberry.png"
+    },
+    {
+        "name": "Tulip",
+        "pierre_price": 20,
+        "joja_price": 25,
+        "growth_time": 6,
+        "sell_value": [
+            30,
+            37,
+            45,
+            60
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/c/cf/Tulip.png"
+    },
+    {
+        "name": "Blue Berry",
+        "pierre_price": 80,
+        "joja_price": 0,
+        "growth_time": 13,
+        "sell_value": [
+            50,
+            62,
+            75,
+            100
+        ],
+        "energy": [
+            25,
+            35,
+            45,
+            65
+        ],
+        "health": [
+            11,
+            15,
+            20,
+            29
+        ],
+        "recipes": [
+            "Blueberry Tart",
+            " Fruit Salad"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/9e/Blueberry.png"
+    },
+    {
+        "name": "Corn",
+        "pierre_price": 150,
+        "joja_price": 187,
+        "growth_time": 14,
+        "sell_value": [
+            50,
+            62,
+            75,
+            100
+        ],
+        "energy": [
+            25,
+            35,
+            45,
+            65
+        ],
+        "health": [
+            11,
+            15,
+            20,
+            29
+        ],
+        "recipes": [
+            "Tortilla"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f8/Corn.png"
+    },
+    {
+        "name": "Hops",
+        "pierre_price": 60,
+        "joja_price": 75,
+        "growth_time": 11,
+        "sell_value": [
+            25,
+            31,
+            37,
+            50
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "Pale Ale"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/5/59/Hops.png"
+    },
+    {
+        "name": "Hot Pepper",
+        "pierre_price": 40,
+        "joja_price": 50,
+        "growth_time": 5,
+        "sell_value": [
+            40,
+            50,
+            60,
+            80
+        ],
+        "energy": [
+            13,
+            18,
+            23,
+            33
+        ],
+        "health": [
+            5,
+            8,
+            10,
+            14
+        ],
+        "recipes": [
+            "Pepper Poppers",
+            " Spicy Eel",
+            " Tropical Curry"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f1/Hot_Pepper.png"
+    },
+    {
+        "name": "Melon",
+        "pierre_price": 80,
+        "joja_price": 100,
+        "growth_time": 12,
+        "sell_value": [
+            250,
+            312,
+            375,
+            500
+        ],
+        "energy": [
+            113,
+            158,
+            203,
+            293
+        ],
+        "health": [
+            50,
+            71,
+            91,
+            131
+        ],
+        "recipes": [
+            "Fruit Salad",
+            " Pink Cake"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/1/19/Melon.png"
+    },
+    {
+        "name": "Poppy",
+        "pierre_price": 100,
+        "joja_price": 125,
+        "growth_time": 7,
+        "sell_value": [
+            140,
+            175,
+            210,
+            280
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "Poppyseed Muffin"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png"
+    },
+    {
+        "name": "Radish",
+        "pierre_price": 40,
+        "joja_price": 50,
+        "growth_time": 6,
+        "sell_value": [
+            90,
+            112,
+            135,
+            180
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "Radish Salad",
+            " Red Plate"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/d5/Radish.png"
+    },
+    {
+        "name": "Red Cabbage",
+        "pierre_price": 100,
+        "joja_price": 0,
+        "growth_time": 9,
+        "sell_value": [
+            260,
+            325,
+            390,
+            520
+        ],
+        "energy": [
+            75,
+            105,
+            135,
+            195
+        ],
+        "health": [
+            33,
+            47,
+            60,
+            87
+        ],
+        "recipes": [
+            "Coleslaw",
+            " Fish Taco",
+            " Red Plate"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/2/2d/Red_Cabbage.png"
+    }
+]

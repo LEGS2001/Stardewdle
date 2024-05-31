@@ -1,124 +1,179 @@
-        
-        @font-face {
-            font-family: 'stardew';
-            src: URL('/static/fonts/stardew-item-font.ttf') format('truetype');
-        }
+@font-face {
+    font-family: 'stardew';
+    src: URL('/static/fonts/stardew-item-font.ttf') format('truetype');
+}
 
-        body{
-            margin: 0;     
-        }
+body {
+    margin: 0;
+}
 
-        .background{
-            background-image:url('/static/images/background.png');
-            overflow: auto;
-            width: 100vw;
-            height: 100vh;
-            font-size:x-large;
-            font-family: 'stardew';
-            margin: 0;
-            padding: 0;
-            background-size: cover;
-            background-position: center;
-        }
+.background {
+    background-image: url('/static/images/background.png');
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    font-size: x-large;
+    font-family: 'stardew';
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+}
 
-        .search-box{
-            width: 600px;
-            margin: 10px auto 0;
-            border-radius: 5px;
-        }
+.search {
+    width: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .input-container{
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
+.search-box {
+    width: 600px;
+    border-radius: 5px;
+}
 
-        }
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
 
-        input {
-            flex: 1;
-            height: 50px;
-            background: transparent;
-            border: 0;
-            outline: 0;
-            padding: 10px;
-            font-size: 32px;     
-            color: #ecac22;
-        }
+}
 
-        .health{
-            align-items: center;
-            margin-left: 20px;
-            margin-right: 20px;
-            color: #ecac22;
-            
-        }
-        .health-bar{
-            width: 18px;
-            height: 82px;
-        }
+input {
+    flex: 1;
+    height: 50px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    font-size: 32px;
+    color: #ecac22;
+}
 
+.health {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    color: #ecac22;
 
-        .crops-container ul{
-            border-top: 1px solid #999;
-            padding: 15px 10px;
-        }
+}
 
-        .crops-container ul li{
-            list-style: none;
-            border-radius: 3px;
-            padding: 15px 10px;
-            cursor: pointer;
-            color: #ecac22;   
-        }
+.health span {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #ecac22;
+}
 
-        .crops-container ul li:hover{
-            background: #0d6efd;       
-        }
+.crops-container ul {
+    max-height: 200px;
+    overflow-y: auto;
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+}
 
+.crops-container ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: #ecac22;
+}
 
-        #guess-container-labels{
-            color: #ecac22;
+.crops-container li>img {
+    margin-right: 5px;
+}
 
-        }
+.crops-container ul li:hover {
+    background: #0d6efd;
+}
 
-        .guess-container:not(#guess-container-labels) {
-            display: flex;
-            flex-direction: column-reverse;
-        }
+#guess-container-labels {
+    color: #ecac22;
+}
 
-        .guess-container-row {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr); /* Ensure 8 columns */
-            grid-auto-flow: row; /* Flow items in column direction */
-        }
+.guess-container:not(#guess-container-labels) {
+    display: flex;
+    flex-direction: column-reverse;
+}
 
-        @keyframes flipIn {
-            from {
-                transform: rotateY(90deg);
-                opacity: 0;
-            }
-            to {
-                transform: rotateY(0deg);
-                opacity: 1;
-            }
-        }
+.guess-container-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    /* Ensure 8 columns */
+    grid-auto-flow: row;
+    /* Flow items in column direction */
+}
 
-        .guess-container-row-item {
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-            border: 1px solid white;
-            margin: 10px;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            animation: flipIn 1s ease-out; /* Apply the flip animation */
-        }
+@keyframes flipIn {
+    from {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
 
-        .guess-container-row-item div {
-            display: flex;
-            width: 200px;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-        }
+    to {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.guess-container-row-item {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid white;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    animation: flipIn 1s ease-out;
+    /* Apply the flip animation */
+}
+
+.guess-container-row-item div {
+    display: flex;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .background {
+        font-size: large;
+    }
+
+    .search {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 90%;
+    }
+
+    .input-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .guess-container-row {
+        grid-template-columns: repeat(2, 1fr);
+        /* Adjust for mobile */
+    }
+
+    .guess-container-row-item {
+        max-width: 100%;
+        margin: 5px;
+    }
+}

@@ -12,23 +12,19 @@
 
 <body>
     <div class="background">
-
-        <div class="search-box">
-            <div class="input-container">
-                <input type="text" id="guess" placeholder="Type to search..." autocomplete="off"">
-                <button class="btn btn-primary" onclick="checkAnswers()">
-                    Submit
-                </button>
+        <div class="search">
+            <div class="search-box">
+                <div class="input-container">
+                    <input type="text" id="guess" placeholder="Type to search..." autocomplete="off"">
+                    <button class=" btn btn-primary" onclick="checkAnswers()">Submit</button>
+                </div>
+                <div id="crops-container" class="crops-container"></div>
             </div>
-            <div id="crops-container" class="crops-container">
+            <div class="health">
+                <span>Health</span>
+                <img id="health-bar" class="health-bar" src="/static/images/health0.png">
             </div>
         </div>
-
-        <div>
-            <span class="health">Health</span>
-            <img id="health-bar" class="health-bar" src="/static/images/healthBar1.png">
-        </div>
-
         <div id="guess-container-labels" class="guess-container">
             <div id="guess-container-row" class="guess-container-row">
                 <div class="guess-container-row-item" id="crop-name-label">Name</div>
@@ -50,6 +46,7 @@
     </div>
     <script src="/static/js/cropdle.js"></script>
     <script src="/static/js/filterSearch.js"></script>
+    <script src="/static/js/getCropdleVars.js"></script>
 </body>
 
 </html>

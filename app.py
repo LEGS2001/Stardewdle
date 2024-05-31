@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', prueba='prueba')
+    return render_template('cropdle.html')
 
 
 # TODO: agregar Seasons al crops json e intercambiarlo por el recipe

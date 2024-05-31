@@ -568,5 +568,292 @@
             " Red Plate"
         ],
         "image": "https://stardewvalleywiki.com/mediawiki/images/2/2d/Red_Cabbage.png"
+    },
+    {
+        "name": "Starfruit",
+        "pierre_price": 0,
+        "joja_price": 0,
+        "growth_time": 13,
+        "sell_value": [
+            750,
+            937,
+            1125,
+            1500
+        ],
+        "energy": [
+            125,
+            175,
+            225,
+            325
+        ],
+        "health": [
+            56,
+            78,
+            101,
+            146
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/db/Starfruit.png"
+    },
+    {
+        "name": "Summer Spangle",
+        "pierre_price": 50,
+        "joja_price": 62,
+        "growth_time": 8,
+        "sell_value": [
+            90,
+            112,
+            135,
+            180
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/9f/Summer_Spangle.png"
+    },
+    {
+        "name": "Summer Squash",
+        "pierre_price": 0,
+        "joja_price": 0,
+        "growth_time": 6,
+        "sell_value": [
+            45,
+            56,
+            67,
+            90
+        ],
+        "energy": [
+            63,
+            88,
+            113,
+            163
+        ],
+        "health": [
+            28,
+            39,
+            50,
+            73
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/4/43/Summer_Squash.png"
+    },
+    {
+        "name": "Sunflower",
+        "pierre_price": 200,
+        "joja_price": 125,
+        "growth_time": 8,
+        "sell_value": [
+            80,
+            100,
+            120,
+            160
+        ],
+        "energy": [
+            45,
+            63,
+            81,
+            117
+        ],
+        "health": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "recipes": [
+            "None"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/81/Sunflower.png"
+    },
+    {
+        "name": "Tomato",
+        "pierre_price": 50,
+        "joja_price": 62,
+        "growth_time": 11,
+        "sell_value": [
+            60,
+            75,
+            90,
+            120
+        ],
+        "energy": [
+            20,
+            28,
+            36,
+            52
+        ],
+        "health": [
+            9,
+            12,
+            16,
+            23
+        ],
+        "recipes": [
+            "Bruschetta",
+            "Eggplant Parmesan",
+            "Fish Stew",
+            "Pizza",
+            "Spaghetti",
+            "Vegetable Medley"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/9d/Tomato.png"
+    },
+    {
+        "name": "Wheat",
+        "pierre_price": 10,
+        "joja_price": 12,
+        "growth_time": 4,
+        "sell_value": [
+            25,
+            31,
+            37,
+            50
+        ],
+        "energy": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "health": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "recipes": [
+            "Beer"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/e/e2/Wheat.png"
+    },
+    {
+        "name": "Amaranth",
+        "pierre_price": 70,
+        "joja_price": 87,
+        "growth_time": 7,
+        "sell_value": [
+            150,
+            187,
+            225,
+            300
+        ],
+        "energy": [
+            50,
+            70,
+            90,
+            130
+        ],
+        "health": [
+            22,
+            31,
+            40,
+            58
+        ],
+        "recipes": [
+            "Salmon Dinner"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f6/Amaranth.png"
+    },
+    {
+        "name": "Artichoke",
+        "pierre_price": 30,
+        "joja_price": 0,
+        "growth_time": 8,
+        "sell_value": [
+            160,
+            200,
+            240,
+            320
+        ],
+        "energy": [
+            30,
+            42,
+            54,
+            78
+        ],
+        "health": [
+            13,
+            18,
+            24,
+            35
+        ],
+        "recipes": [
+            "Artichoke Dip",
+            "Super Meal"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/dd/Artichoke.png"
+    },
+    {
+        "name": "Beet",
+        "pierre_price": 0,
+        "joja_price": 0,
+        "growth_time": 6,
+        "sell_value": [
+            100,
+            125,
+            150,
+            200
+        ],
+        "energy": [
+            30,
+            42,
+            54,
+            78
+        ],
+        "health": [
+            13,
+            18,
+            24,
+            35
+        ],
+        "recipes": [
+            "Vegetable Medley",
+            "Sugar"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/a/a4/Beet.png"
+    },
+    {
+        "name": "Bok Choy",
+        "pierre_price": 50,
+        "joja_price": 62,
+        "growth_time": 4,
+        "sell_value": [
+            80,
+            100,
+            120,
+            160
+        ],
+        "energy": [
+            25,
+            35,
+            45,
+            65
+        ],
+        "health": [
+            11,
+            15,
+            20,
+            29
+        ],
+        "recipes": [
+            "Super Meal"
+        ],
+        "image": "https://stardewvalleywiki.com/mediawiki/images/4/40/Bok_Choy.png"
     }
 ]

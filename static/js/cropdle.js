@@ -1,16 +1,14 @@
-
 const GREEN = '#70C725'
 const YELLOW = '#8D272B'
 const RED = '#FFFDAF'
 
+var guessBox = document.getElementById('guess')
+var guessContainerGrid = document.getElementById('guess-container')
+var healthBar = document.getElementById('health-bar')
 
-let health_lost = 1
-let guess_input = document.getElementById('guess');
-let crops_container = document.getElementById('crops-container')
-let guess_container_grid = document.getElementById('guess-container')
-let health_bar = document.getElementById('health-bar')
+var healthLost = 0
 
-const quality_images = [
+const qualityImages = [
     "/static/images/no-quality.png",
     "https://stardewvalleywiki.com/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/24px-Silver_Quality_Icon.png",
     "https://stardewvalleywiki.com/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/20px-Gold_Quality_Icon.png",
@@ -19,27 +17,8 @@ const quality_images = [
 
 let alreadySelected = []
 
-let cropData
-let randomCrop
-window.addEventListener('load', function () {
-    fetch('/static/json/crops.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (responseData) {
-            cropData = responseData
-            randomCrop = generate_random_crop(responseData)
-
-        });
-});
-
-function generate_random_crop(data) {
-    let data_array = Object.values(data);
-    return data_array[Math.floor(Math.random() * data_array.length)];
-}
-
 function checkAnswers() {
-    let selected_crop = cropData.find(crop => crop.name == guess_input.value);
+    let selected_crop = cropData.find(crop => crop.name == guessBox.value);
 
     // revisa que exista un crop seleccionado
     if (!selected_crop) {
@@ -48,8 +27,8 @@ function checkAnswers() {
 
     if (alreadySelected.includes(selected_crop)){
         alert('Crop already guessed!')
-        guess_input.value = ''
-        crops_container.innerHTML = '';
+        guessBox.value = ''
+        cropsContainer.innerHTML = '';
         return
     }
     alreadySelected.push(selected_crop)
@@ -58,17 +37,17 @@ function checkAnswers() {
 
     if (selected_crop == randomCrop){
         alert('GANASTE')
-        guess_input.value = ''
-        crops_container.innerHTML = '';
+        guessBox.value = ''
+        cropsContainer.innerHTML = '';
         // agregar un boton para recargar la pagina
     } else{
-        health_lost += 1
+        healthLost += 1
     }
-    guess_input.value = ''
-    crops_container.innerHTML = '';
-    health_bar.src = `/static/images/healthBar${health_lost}.png`
+    guessBox.value = ''
+    cropsContainer.innerHTML = '';
+    healthBar.src = `/static/images/health${healthLost}.png`
 
-    if (health_lost == 6){
+    if (healthLost == 5){
         alert(`You lost, the crop was ${randomCrop.name}`)
         location.reload()
     }
@@ -162,7 +141,7 @@ function checkAnswers() {
 
 
         image_qual = document.createElement('img')
-        image_qual.src = quality_images[quality]
+        image_qual.src = qualityImages[quality]
         sell_value_quality.appendChild(image_qual)
 
 
@@ -194,7 +173,7 @@ function checkAnswers() {
         energy_quality.appendChild(image)
 
         image_qual = document.createElement('img')
-        image_qual.src = quality_images[quality]
+        image_qual.src = qualityImages[quality]
         energy_quality.appendChild(image_qual)
 
         
@@ -227,7 +206,7 @@ function checkAnswers() {
 
 
         image_qual = document.createElement('img')
-        image_qual.src = quality_images[quality]
+        image_qual.src = qualityImages[quality]
         health_quality.appendChild(image_qual)
 
 
@@ -251,7 +230,7 @@ function checkAnswers() {
 
     guess_container.appendChild(recipe)
 
-    guess_container_grid.appendChild(guess_container)
+    guessContainerGrid.appendChild(guess_container)
 
 }
 

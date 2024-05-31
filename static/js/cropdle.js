@@ -1,67 +1,62 @@
-const filePath = '/static/json/crops.json';
 
-const WRONG_BG = '#8D272B'
-const WARNING_BG = '#FFFDAF'
-const CORRECT_BG = '#90EE90'
+const GREEN = '#70C725'
+const YELLOW = '#8D272B'
+const RED = '#FFFDAF'
 
-let data;
-let random_crop;
+
 let health_lost = 1
-
 let guess_input = document.getElementById('guess');
 let crops_container = document.getElementById('crops-container')
 let guess_container_grid = document.getElementById('guess-container')
 let health_bar = document.getElementById('health-bar')
 
-let quality_images = [
-    
+const quality_images = [
     "/static/images/no-quality.png",
     "https://stardewvalleywiki.com/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/24px-Silver_Quality_Icon.png",
     "https://stardewvalleywiki.com/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/20px-Gold_Quality_Icon.png",
     "https://stardewvalleywiki.com/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/20px-Iridium_Quality_Icon.png"
 ]
 
-let already_selected = []
+let alreadySelected = []
 
-window.onload = function () {
-    fetch(filePath)
+let cropData
+let randomCrop
+window.addEventListener('load', function () {
+    fetch('/static/json/crops.json')
         .then(function (response) {
             return response.json();
         })
         .then(function (responseData) {
-            data = responseData;
-            generate_random_crop(responseData);
+            cropData = responseData
+            randomCrop = generate_random_crop(responseData)
+
         });
-};
+});
 
 function generate_random_crop(data) {
-    // escoge un crop random del JSON
-    var data_array = Object.values(data);
-    random_crop = data_array[Math.floor(Math.random() * data_array.length)];
-
+    let data_array = Object.values(data);
+    return data_array[Math.floor(Math.random() * data_array.length)];
 }
 
 function checkAnswers() {
+    let selected_crop = cropData.find(crop => crop.name == guess_input.value);
 
-
-    let selected_crop = data.find(crop => crop.name == guess_input.value);
-    
     // revisa que exista un crop seleccionado
     if (!selected_crop) {
         return
     }
 
-    if (already_selected.includes(selected_crop)){
+    if (alreadySelected.includes(selected_crop)){
         alert('Crop already guessed!')
         guess_input.value = ''
         crops_container.innerHTML = '';
         return
     }
-    already_selected.push(selected_crop)
+    alreadySelected.push(selected_crop)
 
 
 
-    if (selected_crop == random_crop){
+    if (selected_crop == randomCrop){
         alert('GANASTE')
         guess_input.value = ''
         crops_container.innerHTML = '';
@@ -74,7 +69,7 @@ function checkAnswers() {
     health_bar.src = `/static/images/healthBar${health_lost}.png`
 
     if (health_lost == 6){
-        alert(`You lost, the crop was ${random_crop.name}`)
+        alert(`You lost, the crop was ${randomCrop.name}`)
         location.reload()
     }
 
@@ -87,10 +82,10 @@ function checkAnswers() {
     crop_name.classList.add("guess-container-row-item")
 
     crop_name.innerHTML = selected_crop.name
-    if (selected_crop.name == random_crop.name) {
-        crop_name.style.backgroundColor = CORRECT_BG
+    if (selected_crop.name == randomCrop.name) {
+        crop_name.style.backgroundColor = GREEN
     } else {
-        crop_name.style.backgroundColor = WRONG_BG
+        crop_name.style.backgroundColor = YELLOW
     }
     guess_container.appendChild(crop_name)
 
@@ -98,14 +93,14 @@ function checkAnswers() {
     pierre_price = document.createElement('div')
     pierre_price.classList.add("guess-container-row-item")
 
-    if (selected_crop.pierre_price < random_crop.pierre_price) {
-        pierre_price.style.backgroundColor = WARNING_BG
+    if (selected_crop.pierre_price < randomCrop.pierre_price) {
+        pierre_price.style.backgroundColor = RED
         pierre_price.innerHTML = `${selected_crop.pierre_price} ↑`
-    } else if (selected_crop.pierre_price > random_crop.pierre_price) {
-        pierre_price.style.backgroundColor = WARNING_BG
+    } else if (selected_crop.pierre_price > randomCrop.pierre_price) {
+        pierre_price.style.backgroundColor = RED
         pierre_price.innerHTML = `${selected_crop.pierre_price} ↓`
     } else {
-        pierre_price.style.backgroundColor = CORRECT_BG
+        pierre_price.style.backgroundColor = GREEN
         pierre_price.innerHTML = `${selected_crop.pierre_price}`
     }
     guess_container.appendChild(pierre_price)
@@ -113,14 +108,14 @@ function checkAnswers() {
     // joja price comparison
     joja_price = document.createElement('div')
     joja_price.classList.add("guess-container-row-item")
-    if (selected_crop.joja_price < random_crop.joja_price) {
-        joja_price.style.backgroundColor = WARNING_BG
+    if (selected_crop.joja_price < randomCrop.joja_price) {
+        joja_price.style.backgroundColor = RED
         joja_price.innerHTML = `↑ ${selected_crop.joja_price}`
-    } else if (selected_crop.joja_price > random_crop.joja_price) {
-        joja_price.style.backgroundColor = WARNING_BG
+    } else if (selected_crop.joja_price > randomCrop.joja_price) {
+        joja_price.style.backgroundColor = RED
         joja_price.innerHTML = `↓ ${selected_crop.joja_price}`
     } else {
-        joja_price.style.backgroundColor = CORRECT_BG
+        joja_price.style.backgroundColor = GREEN
         joja_price.innerHTML = `${selected_crop.joja_price}`
     }
     guess_container.appendChild(joja_price)
@@ -128,14 +123,14 @@ function checkAnswers() {
     // growth time
     growth_time = document.createElement('div')
     growth_time.classList.add("guess-container-row-item")
-    if (selected_crop.growth_time < random_crop.growth_time) {
-        growth_time.style.backgroundColor = WARNING_BG
+    if (selected_crop.growth_time < randomCrop.growth_time) {
+        growth_time.style.backgroundColor = RED
         growth_time.innerHTML = `↑ ${selected_crop.growth_time}`
-    } else if (selected_crop.growth_time > random_crop.growth_time) {
-        growth_time.style.backgroundColor = WARNING_BG
+    } else if (selected_crop.growth_time > randomCrop.growth_time) {
+        growth_time.style.backgroundColor = RED
         growth_time.innerHTML = `↓ ${selected_crop.growth_time}`
     } else {
-        growth_time.style.backgroundColor = CORRECT_BG
+        growth_time.style.backgroundColor = GREEN
         growth_time.innerHTML = `${selected_crop.growth_time}`
     }
     guess_container.appendChild(growth_time)
@@ -149,14 +144,14 @@ function checkAnswers() {
         sell_value_quality = document.createElement('div')
         sell_value_quality.classList.add('text-center')
         sell_value_quantity = document.createElement('span')
-        if (selected_crop.sell_value[quality] < random_crop.sell_value[quality]) {
-            sell_value_quality.style.backgroundColor = WARNING_BG
+        if (selected_crop.sell_value[quality] < randomCrop.sell_value[quality]) {
+            sell_value_quality.style.backgroundColor = RED
             sell_value_quantity.textContent = `↑ ${selected_crop.sell_value[quality]}`
-        } else if (selected_crop.sell_value[quality] > random_crop.sell_value[quality]) {
-            sell_value_quality.style.backgroundColor = WARNING_BG
+        } else if (selected_crop.sell_value[quality] > randomCrop.sell_value[quality]) {
+            sell_value_quality.style.backgroundColor = RED
             sell_value_quantity.textContent = `↓ ${selected_crop.sell_value[quality]}`
         } else {
-            sell_value_quality.style.backgroundColor = CORRECT_BG
+            sell_value_quality.style.backgroundColor = GREEN
             sell_value_quantity.textContent = `${selected_crop.sell_value[quality]}`
         }
         image = document.createElement('img')
@@ -182,14 +177,14 @@ function checkAnswers() {
         energy_quality = document.createElement('div')
         energy_quality.classList.add('text-center')
         energy_quantity = document.createElement('span')
-        if (selected_crop.energy[quality] < random_crop.energy[quality]) {
-            energy_quality.style.backgroundColor = WARNING_BG
+        if (selected_crop.energy[quality] < randomCrop.energy[quality]) {
+            energy_quality.style.backgroundColor = RED
             energy_quantity.textContent = `↑ ${selected_crop.energy[quality]}`
-        } else if (selected_crop.energy[quality] > random_crop.energy[quality]) {
-            energy_quality.style.backgroundColor = WARNING_BG
+        } else if (selected_crop.energy[quality] > randomCrop.energy[quality]) {
+            energy_quality.style.backgroundColor = RED
             energy_quantity.textContent = `↓ ${selected_crop.energy[quality]}`
         } else {
-            energy_quality.style.backgroundColor = CORRECT_BG
+            energy_quality.style.backgroundColor = GREEN
             energy_quantity.textContent = `${selected_crop.energy[quality]}`
         }
         image = document.createElement('img')
@@ -214,14 +209,14 @@ function checkAnswers() {
     for (quality in selected_crop.health) {
         health_quality = document.createElement('div')
         health_quantity = document.createElement('span')
-        if (selected_crop.health[quality] < random_crop.health[quality]) {
-            health_quality.style.backgroundColor = WARNING_BG
+        if (selected_crop.health[quality] < randomCrop.health[quality]) {
+            health_quality.style.backgroundColor = RED
             health_quantity.textContent = `↑ ${selected_crop.health[quality]}`
-        } else if (selected_crop.health[quality] > random_crop.health[quality]) {
-            health_quality.style.backgroundColor = WARNING_BG
+        } else if (selected_crop.health[quality] > randomCrop.health[quality]) {
+            health_quality.style.backgroundColor = RED
             health_quantity.textContent = `↓ ${selected_crop.health[quality]}`
         } else {
-            health_quality.style.backgroundColor = CORRECT_BG
+            health_quality.style.backgroundColor = GREEN
             health_quantity.textContent = `${selected_crop.health[quality]}`
         }
         image = document.createElement('img')
@@ -243,14 +238,14 @@ function checkAnswers() {
     // recipes comparison
     recipe = document.createElement('div')
     recipe.classList.add("guess-container-row-item")
-    if (selected_crop.recipes == random_crop.recipes){
-        recipe.style.backgroundColor = CORRECT_BG
+    if (selected_crop.recipes == randomCrop.recipes){
+        recipe.style.backgroundColor = GREEN
         recipe.innerHTML = selected_crop['recipes']
-    } else if (selected_crop['recipes'].some(item => random_crop['recipes'].includes(item))){
-        recipe.style.backgroundColor = WARNING_BG
+    } else if (selected_crop['recipes'].some(item => randomCrop['recipes'].includes(item))){
+        recipe.style.backgroundColor = RED
         recipe.innerHTML = selected_crop['recipes']
     } else {
-        recipe.style.backgroundColor = WRONG_BG
+        recipe.style.backgroundColor = YELLOW
         recipe.innerHTML = selected_crop['recipes']
     }
 
@@ -260,35 +255,3 @@ function checkAnswers() {
 
 }
 
-function filterCrops() {
-
-    let input_value = guess_input.value.toLowerCase();
-    crops_container.innerHTML = '';
-
-    if (input_value == ''){
-        return
-    }
-    
-    data.forEach(element => {
-        if (element.name.toLowerCase().includes(input_value)) {
-            item = document.createElement('div');
-            item.classList.add("btn", "btn-primary", "m-2");
-
-            item.addEventListener('click', () => {
-                guess_input.value = element.name;
-
-            });
-
-            image = document.createElement('img')
-            image.src = element.image
-
-            crop_name = document.createElement('span')
-            crop_name.textContent = element.name
-
-            item.appendChild(image)
-            item.appendChild(crop_name)
-
-            crops_container.appendChild(item);
-        }
-    });
-}
